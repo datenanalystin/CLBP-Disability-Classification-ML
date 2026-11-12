@@ -12,3 +12,8 @@ This repository contains the official implementation of the machine learning pip
 To predict disability status for a new patient, make sure `ann_model.joblib` and `predict_ann.py` are in the same directory, then run:
 ```bash
 python predict_ann.py
+
+Reproducibility & Stochastic Note
+Fixed Seeds: The pipeline utilizes a fixed random seed (random_state=42) for train-test splitting and bootstrap computations to ensure methodological consistency.
+
+Deep Learning Variance: Due to random weight initialization and stochastic gradient descent optimization in TensorFlow/Keras, executing pipeline.py locally may yield minor, natural variations in exact confusion matrix counts and performance metrics, while maintaining the overall robust performance bounds reported in the manuscript.
